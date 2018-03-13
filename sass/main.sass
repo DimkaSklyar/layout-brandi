@@ -3,6 +3,10 @@
 @import "libs"
 
 /*==========  user style  ==========*/
+h3
+	font-size: 20px
+	font-family: "Open Sans Semibold",sans-serif
+
 .header-page
 	position: absolute
 	width: 100%
@@ -80,15 +84,14 @@
 		background-image: url(../img/header-1.jpg)
 		background-size: cover
 		background-position: center top
-		// display: none
 		min-height: 600px
-		transition: transform .5s ease
 		
-		&-active
-			display: block
-			animation: slider .5s
+		&:first-of-type
+			z-index: 1
 
-	.active
+		&-active
+			animation: slider 1.6s ease
+
 
 	&-inner
 		position: absolute
@@ -140,6 +143,7 @@
 		top: 50%
 		transform: translateY(-50%)
 		right: 3%
+		z-index: 50
 		input
 			display: none
 			&:checked + label
@@ -152,7 +156,6 @@
 			border-radius: 50%
 			border: 1px solid #fff
 			margin: 20px 10px
-			cursor: pointer
 			transition: all .6s ease-in-out
 
 .top-social
@@ -162,12 +165,110 @@
 	transform: translateX(-50%)
 	font-size: 26px
 	color: rgba(255, 255, 255, .3)
+	z-index: 50
 	a
 		padding: 5px
 		transition: color .2s ease-in-out
 		color: rgba(255, 255, 255, .3)
 		&:hover
 			color: #fff
+
+.features
+	background: #f4f7f9
+
+section
+	padding: 55px 0 35px
+	.section-caption
+		position: relative
+		text-align: center
+		text-transform: uppercase
+		color: #0eb493
+		font-size: 28px
+		padding-top: 10px
+		padding-bottom: 20px
+		margin-bottom: 65px
+		display: block
+		&::before
+			content: ''
+			position: absolute
+			height: 2px
+			width: 230px
+			background-color: rgba(0, 0, 0, .2)
+			left: 50%
+			transform: translate(-50%)
+			bottom: 0
+		&::after
+			font-family: FontAwesome
+			content: '\f08a'
+			position: absolute
+			font-size: .8em
+			z-index: 1
+			bottom: -35%
+			color: rgba(0, 0, 0, .2)
+			background-color: #f4f7f9
+			padding:  5px 10px
+			left: 50%
+			transform: translate(-50%)
+
+.features
+	.container
+		margin-bottom: 30px
+	&-item
+		color: $text-color
+		margin-left: 5.5%
+		position: relative
+
+		&:nth-child(1)::before
+			content: '\f0a1'
+		&:nth-child(2)::before
+			content: '\f040'
+		&:nth-child(3)::before
+			content: '\f292 '
+		p
+			font-size: 13px
+			padding: 0
+
+@for $i from 1 to 4 
+	.features-item:nth-child(#{$i})::before
+		font-family: FontAwesome
+		position: absolute
+		text-align: center
+		padding-top: 4px
+		left: -12%
+		color: #0eb493
+		font-size: 20px
+		width: 40px
+		height: 40px
+		border-radius: 50%
+		border:  1px solid #0eb493
+
+.carousel
+	&-nav
+		text-align: center
+		input
+			display: none
+			&:checked + label
+				background-color: #000
+		label
+			display: inline-block
+			width: 8px
+			height: 8px
+			border-radius: 50%
+			border: 1px solid #c7ced4
+			margin: 20px 7px
+			cursor: pointer
+			transition: all .6s ease-in-out
+
+.works
+	.section-caption
+		&::after
+			background-color: #fff
+	p
+		font-family: "Open Sans Semibold",sans-serif
+		font-weight: bold
+		text-align: center
+		width: 70%
+		margin: 0 auto
 
 /*==========  animation style  ==========*/
 @keyframes slider

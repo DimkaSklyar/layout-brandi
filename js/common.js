@@ -27,27 +27,12 @@ $('label[for="nav-slider-1"]').click(function(){
 	clearInterval(slider);
 });
 
+var containerEl = document.querySelector('[data-ref~="mixitup-container"]');
 
-
- $('#portfolio-nav li a').click(function() {
-    // fetch the class of the clicked item
-    var ourClass = $(this).attr('class');
-    // reset the active class on all the buttons
-    $('#portfolio-nav li').removeClass('active-items');
-    // update the active state on our clicked button
-    $(this).parent().addClass('active-items');
-    if(ourClass == 'all') {
-      // show all our items
-      $('#portfolio-items').children('div.item').show();
-    }
-    else {
-      // hide all elements that don't share ourClass
-      $('#portfolio-items').children('div:not(.' + ourClass + ')').hide();
-      // show all elements that do share ourClass
-      $('#portfolio-items').children('div.' + ourClass).show();
-    }
-    return false;
-  });
-
+var mixer = mixitup(containerEl, {
+  selectors: {
+    target: '[data-ref~="mixitup-target"]'
+  }
+});
 
 });

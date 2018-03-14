@@ -276,27 +276,29 @@ section
 		padding: 0
 		text-align: center
 		margin-bottom: 35px
-		.active-items
-			background-color: $lo-color-1
-			a
-				color: #ffffff
-		li
+		button
 			display: inline-block
 			border-radius: 5px
-			a
-				display: block
-				color: $text-color
-				padding: 5px 10px
-				font-weight: bold
-				font-size: 14px
-				text-decoration: none
+			color: $text-color
+			padding: 5px 10px
+			font-weight: bold
+			font-size: 14px
+			border: 0
+			background: none
+			&:focus
+				outline: 0 none
+		.mixitup-control-active
+			background-color: $lo-color-1
+			color: #ffffff
+				
 	#portfolio-items
 		.item
 			flex: 1 0 25%
 			position: relative
 			overflow: hidden
 			padding: 0
-
+			display: block
+			transition: 3s
 			img
 				width: 100%
 			&-description
@@ -325,6 +327,10 @@ section
 				background-color: rgba($lo-color-1,0.9)
 			&:hover .item-description
 					display: block
+
+		.qwerty
+			opacity: 0
+			position: absolute
 
 /*==========  animation style  ==========*/
 @keyframes slider

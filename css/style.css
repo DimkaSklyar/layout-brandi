@@ -5242,26 +5242,24 @@ section .section-description {
   margin-bottom: 35px;
 }
 
-.portfolio #portfolio-nav .active-items {
-  background-color: #0eb493;
-}
-
-.portfolio #portfolio-nav .active-items a {
-  color: #ffffff;
-}
-
-.portfolio #portfolio-nav li {
+.portfolio #portfolio-nav button {
   display: inline-block;
   border-radius: 5px;
-}
-
-.portfolio #portfolio-nav li a {
-  display: block;
   color: #062033;
   padding: 5px 10px;
   font-weight: bold;
   font-size: 14px;
-  text-decoration: none;
+  border: 0;
+  background: none;
+}
+
+.portfolio #portfolio-nav button:focus {
+  outline: 0 none;
+}
+
+.portfolio #portfolio-nav .mixitup-control-active {
+  background-color: #0eb493;
+  color: #ffffff;
 }
 
 .portfolio #portfolio-items .item {
@@ -5269,6 +5267,8 @@ section .section-description {
   position: relative;
   overflow: hidden;
   padding: 0;
+  display: block;
+  transition: 3s;
 }
 
 .portfolio #portfolio-items .item img {
@@ -5309,6 +5309,11 @@ section .section-description {
 
 .portfolio #portfolio-items .item:hover .item-description {
   display: block;
+}
+
+.portfolio #portfolio-items .qwerty {
+  opacity: 0;
+  position: absolute;
 }
 
 /*==========  animation style  ==========*/

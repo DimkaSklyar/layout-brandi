@@ -181,41 +181,40 @@ section
 	.section-caption
 		position: relative
 		text-align: center
-		text-transform: uppercase
-		color: $lo-color-1
-		font-size: 28px
 		padding-top: 10px
 		padding-bottom: 20px
-		margin-bottom: 65px
-		display: block
-		&::before
-			content: ''
-			position: absolute
-			height: 2px
-			width: 230px
-			background-color: rgba(0, 0, 0, .2)
-			left: 50%
-			transform: translate(-50%)
-			bottom: 0
-		&::after
-			font-family: FontAwesome
-			content: '\f08a'
-			position: absolute
-			font-size: .8em
-			z-index: 1
-			bottom: -35%
-			color: rgba(0, 0, 0, .2)
-			background-color: #f4f7f9
-			padding:  5px 10px
-			left: 50%
-			transform: translate(-50%)
+		margin-bottom: 15px
+		h2
+			font-size: 28px
+			text-transform: uppercase
+			color: $lo-color-1
+		span
+			position: relative
+			color:  rgba(0, 0, 0, .2)
+			font-size: 1.2em
+			padding:  5px 110px
+			@at-root
+				%headerHR
+					content: ''
+					position: absolute
+					height: 1px
+					width: 90px
+					background-color: rgba(0, 0, 0, .2)
+					transform: translateY(-45%)
+					bottom: 45%
+			&::before
+				@extend %headerHR
+				right: 0
+			&::after
+				@extend %headerHR
+				left: 0
 	.section-description
 		font-family: "Open Sans Semibold",sans-serif
 		font-weight: bold
 		text-align: center
 		width: 70%
 		margin: 0 auto
-		margin-bottom: 40px
+		margin-bottom: 100px
 
 .features
 	.container
@@ -276,6 +275,7 @@ section
 		padding: 0
 		text-align: center
 		margin-bottom: 35px
+		margin-top: -60px
 		button
 			display: inline-block
 			border-radius: 5px
@@ -285,53 +285,94 @@ section
 			font-size: 14px
 			border: 0
 			background: none
+			cursor: pointer
 			&:focus
 				outline: 0 none
-		.mixitup-control-active
-			background-color: $lo-color-1
+		.portfolio-control-active
+			background-color: $lo-color-1 !important
 			color: #ffffff
-				
-	#portfolio-items
-		.item
-			flex: 1 0 25%
-			position: relative
-			overflow: hidden
-			padding: 0
-			display: block
-			transition: 3s
-			img
-				width: 100%
-			&-description
-				position: absolute
-				display: none
-				text-align: center
-				top: 50%
-				left: 50%
-				transform: translate(-50%,-50%)
-				width: 100%
-				padding: 0 10px
-				color: #ffffff
-				font-size: 14px
-				h3
-					font-size: 18px
-			&::before
-				content: ''
-				display: block
-				position: absolute
-				transition: .3s
-				top: 0
-				bottom: 0
-				left: 0
-				right: 0
-			&:hover::before
-				background-color: rgba($lo-color-1,0.9)
-			&:hover .item-description
-					display: block
 
-		.qwerty
-			opacity: 0
+#portfolio-items
+	.mix
+		position: relative
+		overflow: hidden
+		padding: 0
+		vertical-align: top
+		width: calc(100%/4)
+		img
+			width: 100%
+		&-description
 			position: absolute
+			display: none
+			text-align: center
+			top: 70%
+			left: 50%
+			transform: translate(-50%,-70%)
+			width: 100%
+			padding: 0 10px
+			color: #ffffff
+			font-size: 14px
+			h3
+				font-size: 18px
+				& + p
+				margin-top: -10px
+		a
+			position: absolute
+			display: none
+			top: 35%
+			left: 50%
+			transform: translate(-50%, -35%)
+			width: 40px
+			height: 40px
+			border: 1px solid #ffffff
+			border-radius: 50%
+			content: '\f06e'
+			color: #ffffff
+			text-align: center
+			padding-top: 6px
+			transition: all .15s ease-in-out
+		&:hover a
+			display: block
+		&::before
+			content: ''
+			display: block
+			position: absolute
+			transition: .5s
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+		&:hover::before
+			background-color: rgba($lo-color-1,0.9)
+		&:hover .mix-description
+				display: block
+		a:hover
+			transform: scale($lo-scale) translate((-50%/$lo-scale), (-35%/$lo-scale))
 
+.team-item
+	&-media
+		position: relative
+	&:hover 
+		display: block
+	.description
+		display: none
+		position: absolute
+		top: 0
+		bottom: 0
+		background: rgba($lo-color-1,0.9) 
+		color: #ffffff
+		text-align: center
+		font-size: 1em
+		padding: 20px
+	&:hover .description
+		display: block
+	.team-social
+		position: absolute
+		bottom: 0
+		i
+			background-color: rgba(#000,.3)
+			width: 42px
+			height: 42px
 /*==========  animation style  ==========*/
 @keyframes slider
 	0%

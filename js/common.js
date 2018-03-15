@@ -28,11 +28,32 @@ $('label[for="nav-slider-1"]').click(function(){
 });
 
 var containerEl = document.querySelector('[data-ref~="mixitup-container"]');
-
 var mixer = mixitup(containerEl, {
   selectors: {
     target: '[data-ref~="mixitup-target"]'
-  }
+  },
+	animation: {
+        effects: 'fade stagger(100ms)',
+        staggerSequence: function(i) {
+            return i % 3;
+        }
+    },
+		classNames: {
+				block:'portfolio',
+        elementFilter: 'control'
+    }
 });
+
+
+$('.custom1').owlCarousel({
+    loop:true,
+    margin:30,
+    responsive:{
+        1000:{
+            items:4
+        }
+    }
+});
+
 
 });

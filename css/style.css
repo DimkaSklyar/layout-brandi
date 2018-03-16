@@ -5161,23 +5161,24 @@ h3 {
   }
 }
 
-.logo-wrapper .logo {
+.logo {
   font-family: "Pacifico",  sans-serif;
   font-size: 28px;
   margin-right: 15px;
 }
 
-.logo-wrapper .logo a {
+.logo a {
   display: block;
   padding: 10px;
   transition: color .3s ease-in-out;
+  color: #ffffff;
 }
 
-.logo-wrapper .logo a:hover {
+.logo:hover a {
   color: #0eb493;
 }
 
-.logo-wrapper .desc {
+.logo .desc {
   border-left: 1px solid #d6ecfb;
   font-family: "Open Sans", sans-serif;
   font-weight: 200;
@@ -5693,7 +5694,8 @@ section .section-description {
 }
 
 .facts-digit p {
-  font-family: "Open Sans";
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
   font-size: 18px;
   text-transform: uppercase;
 }
@@ -5702,10 +5704,12 @@ section .section-description {
   font-size: 22px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
+  margin-bottom: 30px;
 }
 
 .contact-information address p {
-  margin: 0;
+  line-height: 2.4;
+  margin-bottom: 0;
   font-size: 13px;
   color: #6a737b;
 }
@@ -5723,6 +5727,7 @@ section .section-description {
   border-bottom: 1px solid #cccccc;
   transition: all .3s ease;
   font-size: 22px;
+  cursor: text;
 }
 
 .contact-form .input-container {
@@ -5738,6 +5743,7 @@ section .section-description {
   color: #cccccc;
   transition: all .3s ease-in-out;
   transform-origin: left;
+  cursor: text;
 }
 
 .contact-form .input-container input:focus, .contact-form .input-container textarea:focus {
@@ -5750,6 +5756,182 @@ section .section-description {
   font-size: 10px;
   transform: translateY(-120%);
   color: #0eb493;
+}
+
+.contact-form .buttom-container {
+  margin: 35px 0 5px;
+}
+
+.contact-form .buttom-container button {
+  margin-left: auto;
+  display: block;
+  font-size: 1em;
+  color: #000000;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background .4s ease;
+  border-radius: 3px;
+  padding-bottom: 5px;
+}
+
+.contact-form .buttom-container button::before {
+  position: relative;
+  font-family: FontAwesome;
+  content: '\f003';
+  color: #0eb493;
+  font-size: 1.5em;
+  margin-right: 10px;
+  top: 2px;
+}
+
+.contact-form .buttom-container button:hover {
+  background: rgba(14, 180, 147, 0.2);
+}
+
+.contact-form .buttom-container button:active {
+  background: rgba(14, 180, 147, 0.6);
+  outline: 0 none;
+}
+
+.contact-form .buttom-container button:active::before {
+  color: #ffffff;
+}
+
+.contact-social {
+  flex-direction: column;
+}
+
+.contact-social a {
+  margin: auto;
+  font-size: 2em;
+  color: rgba(0, 0, 0, 0.3);
+  transition: all .2s ease;
+}
+
+.contact-social a:hover {
+  color: rgba(14, 180, 147, 0.6);
+}
+
+.map {
+  border-bottom: 5px solid #062033;
+}
+
+.baseline {
+  align-items: baseline;
+}
+
+.dis-align {
+  align-self: stretch;
+}
+
+section:last-child {
+  padding-bottom: 0;
+}
+
+.footer-page {
+  background-color: #21b697;
+  padding: 100px 0;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.footer-page h5 {
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+
+.footer-page .logo-bottom {
+  display: inline-block;
+  margin-bottom: 35px;
+}
+
+.footer-page .logo-bottom a {
+  text-decoration: none;
+  padding: 0;
+  transition: .4s;
+}
+
+.footer-page .logo-bottom a:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.footer-page .about-us {
+  font-size: 13px;
+  color: #ffffff;
+  line-height: 1.7;
+}
+
+.footer-page .subscribe-btn-wrap {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.footer-page .subscribe-btn-wrap input {
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  background: none;
+  height: 47px;
+  width: 100%;
+  font-size: 22px;
+  padding-right: 35px;
+  transition: all .5s ease;
+}
+
+.footer-page .subscribe-btn-wrap input:focus {
+  outline: 0 none;
+  border-color: rgba(6, 32, 51, 0.4);
+}
+
+.footer-page .subscribe-btn-wrap input:focus + label {
+  transform: scale(-1, 1) translateY(-50%);
+  color: rgba(6, 32, 51, 0.4);
+}
+
+.footer-page .subscribe-btn-wrap label {
+  position: absolute;
+  display: block;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5%;
+  font-size: 22px;
+  transition: all .5s ease;
+  margin: 0;
+  line-height: 0;
+}
+
+.footer-page .subscribe-btn-wrap:hover label {
+  border-color: rgba(6, 32, 51, 0.4);
+}
+
+.footer-page .explore ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 2.4;
+  font-size: 1em;
+  margin-top: -10px;
+}
+
+.footer-page .explore ul a {
+  color: inherit;
+}
+
+.footer-page .author-info {
+  margin-top: -10px;
+}
+
+.footer-page .author-info span {
+  color: #062033;
+}
+
+.footer-page .author p:not(:first-child) {
+  color: #062033;
+}
+
+input,
+textarea {
+  color: rgba(6, 32, 51, 0.7);
 }
 
 /*==========  castom OWL-CAROUSEL  ==========*/

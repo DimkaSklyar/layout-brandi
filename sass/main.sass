@@ -464,7 +464,27 @@ section
 			width: 100%
 			border: none
 			border-bottom: 1px solid #cccccc
-		
+			transition: all .3s ease
+			font-size: 22px
+		.input-container
+			position: relative
+			margin: 40px 0 5px
+			label
+				position: absolute
+				top: 0
+				left: 0
+				margin-bottom: 16px
+				color: #cccccc
+				transition: all .3s ease-in-out
+				transform-origin: left
+			& input:focus, & textarea:focus
+				outline: none 0
+				border-bottom: 1px solid $lo-color-1 
+			input:focus + label, input:valid + label,
+			textarea:focus + label, textarea:valid + label
+				font-size: 10px
+				transform: translateY(-120%)
+				color: $lo-color-1
 /*==========  castom OWL-CAROUSEL  ==========*/
 .owl-carousel 
 	button.owl-dot

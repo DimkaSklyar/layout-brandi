@@ -382,21 +382,23 @@
 						<div class="contact-form">
 							<h3>Say hello</h3>
 							<form action="" method="post" class="row">
-								<label for="input-name" class="col">Name
-									<input type="text" name="input-name" id="input-name">
-								</label>
-								<label for="input-mail" class="col">Email
-									<input type="text" name="input-mail" id="input-name">
-								</label>
-								<div class="w-100"></div>
-								<label for="input-message" class="col">Message
-									<textarea name="input-message" id="input-message" rows="1"></textarea>
-								</label>
+								<div class="input-container col">
+									<input type="text" name="input-name" id="input-name" required>
+									<label for="input-name" class="col">Name</label>
+								</div>
+								<div class="input-container col">
+									<input type="text" name="input-mail" id="input-mail" required>
+									<label for="input-mail" class="col">Email</label>
+								</div>
+								<div class="input-container col-12">
+									<textarea name="input-message" id="input-message" rows="1" required></textarea>
+									<label for="input-message" class="col">Message</label>
+								</div>
 							</form>
 						</div>
 					</div>
 					<div class="col-1">
-						<div class="contact-social">
+						<div class="contact-social row">
 							<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 							<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 							<a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>

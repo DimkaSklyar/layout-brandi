@@ -55,5 +55,4 @@ $('.custom1').owlCarousel({
     }
 });
 
-
 });

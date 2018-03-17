@@ -24,8 +24,11 @@ h3
 .logo-wrapper
 	display: flex
 	align-items: center
+	+media-breakpoint-down(md)
+		justify-content: center
 	+media-breakpoint-down(sm)
 		justify-content: center
+		width: 80%
 .logo
 	font-family: "Pacifico",  sans-serif
 	font-size: 28px
@@ -51,26 +54,54 @@ h3
 	align-items: center
 	flex: 0
 	margin-left: auto
+	+media-breakpoint-down(md)
+		justify-content: center
+		margin: auto
 	+media-breakpoint-down(sm)
 		margin: 0
 		justify-content: center
 		flex: 1
+	+media-breakpoint-down(sm)
+		justify-content: flex-start
 	.nav
 		list-style: none
 		display: flex
 		padding: 0
 		margin: 0
-
+		+media-breakpoint-down(sm)
+			flex-direction: column
+			width: 100%
+			margin-right: 5px
+			margin-bottom: 10px
+			display: none
 		&-item
+			+media-breakpoint-down(sm)
+				border-bottom: 1px solid $lo-color-1
 			a
 				display: block
 				border-top: 2px solid transparent
 				padding: 22px 1px
 				margin: 0 16px //TODO
 				transition: all .2s ease-in-out
+				+media-breakpoint-down(sm)
+					padding: 10px 1px
+					width: 100%
 				&:hover
 					border-top-color: #32b0ee
+			.nav-active
+				border-top-color: #32b0ee
+				+media-breakpoint-down(sm)
+					border: none
 
+.mobile-menu-wrapper
+	display: none
+	position: relative
+	width: 50px
+	+media-breakpoint-down(sm)
+		display: block
+	+media-breakpoint-down(xs)
+		display: block
+			
 .slider
 	height: 100vh
 	width: 100%
@@ -145,6 +176,8 @@ h3
 		transform: translateY(-50%)
 		right: 3%
 		z-index: 50
+		+media-breakpoint-down(sm)
+			display: none
 		input
 			display: none
 			&:checked + label
@@ -222,12 +255,12 @@ section
 		margin-bottom: 30px
 	&-item
 		color: $text-color
-		margin-left: 5.5%
+		margin-left: 12%
 		position: relative
-		&::before
-			font-family: FontAwesome
+		span
 			position: absolute
 			text-align: center
+			display: block
 			padding-top: 4px
 			left: -12%
 			color: #0eb493
@@ -236,32 +269,9 @@ section
 			height: 40px
 			border-radius: 50%
 			border:  1px solid #0eb493
-		&:nth-child(1)::before
-			content: '\f0a1'
-		&:nth-child(2)::before
-			content: '\f040'
-		&:nth-child(3)::before
-			content: '\f292 '
 		p
 			font-size: 13px
-			padding: 0
-
-.carousel
-	&-nav
-		text-align: center
-		input
-			display: none
-			&:checked + label
-				background-color: #000
-		label
-			display: inline-block
-			width: 8px
-			height: 8px
-			border-radius: 50%
-			border: 1px solid #c7ced4
-			margin: 20px 7px
-			cursor: pointer
-			transition: all .6s ease-in-out
+			padding-right: 20px
 
 .works
 	.section-caption
@@ -300,6 +310,12 @@ section
 		padding: 0
 		vertical-align: top
 		width: calc(100%/4)
+		+media-breakpoint-down(md)
+			width: calc(100%/3)
+		+media-breakpoint-down(sm)
+			width: calc(100%/2)
+		+media-breakpoint-down(sm)
+			width: 100%
 		img
 			width: 100%
 		&-description
@@ -330,6 +346,8 @@ section
 			padding-top: 9px
 			transition: all .3s ease-in-out
 			font-size: 1.4em
+			+media-breakpoint-down(md)
+				margin-bottom: 20px
 		&:hover a
 			display: inline-block
 		&::before
@@ -349,6 +367,10 @@ section
 			transform: scale($lo-scale)
 
 .team-item
+	+media-breakpoint-down(md)
+		font-size: 13px
+	+media-breakpoint-down(sm)
+		font-size: 16px
 	&-media
 		position: relative
 	.description
@@ -364,6 +386,8 @@ section
 		font-size: 1em
 		padding: 20px
 		transition: all .2s ease-in-out
+		+media-breakpoint-down(md)
+			padding: 15px
 	&-media
 		&:hover  .description
 			opacity: 1
@@ -412,7 +436,23 @@ section
 	.section-caption span::before,
 	.section-caption span::after
 		background: $light-color
-
+	&-container
+		+media-breakpoint-down(sm)
+			display: flex
+			& .facts-digit
+				flex: 1
+				margin: 0
+			& .facts-item
+				flex: 1
+				border: none
+				i
+					width: 130px
+					height: 130px
+					border: 1px solid #ffffff
+					border-radius: 50%
+					text-align: center
+					vertical-align: middle
+					line-height: 2.4
 	@at-root
 		%flexCenter
 			margin: auto
@@ -426,14 +466,20 @@ section
 		border: 1px solid $light-color
 		border-radius: 50%
 		color: $light-color
-		font-size: 36px
+		font-size: 3em
 		margin-bottom: 35px
+		+media-breakpoint-down(md)
+			margin-bottom: 15px
+		+media-breakpoint-down(sm)
+			display: none
 		@extend %flexCenter
 	&-digit
 		@extend %flexCenter
 		flex-direction: column
 		color: $light-color
 		margin-bottom: 100px
+		+media-breakpoint-down(md)
+			margin-bottom: 30px
 		span
 			font-family: "OpenSansSemibold", sans-serif
 			font-size: 60px
@@ -451,12 +497,16 @@ section
 			font-family: 'Open Sans', sans-serif
 			font-weight: 400
 			margin-bottom: 30px
+			+media-breakpoint-down(md)
+				margin-bottom: 5px
 		address
 			p
 				line-height: 2.4
 				margin-bottom: 0
 				font-size: 13px
 				color: #6a737b
+				+media-breakpoint-down(md)
+				line-height: 2
 	&-form
 		h3
 			font-size: 22px
@@ -516,15 +566,28 @@ section
 				&:active
 					background: rgba($lo-color-1,.6)
 					outline: 0 none
+					color: #ffffff
+				&:focus
+					outline: 0 none
 				&:active::before
 					color: #ffffff
 	&-social
 		flex-direction: column
+		+media-breakpoint-down(md)
+			flex-direction: row
+			justify-content: center
+			border-top: 1px solid #ccc
+			margin: 20px 0
 		a
 			margin: auto
 			font-size: 2em
 			color: rgba(#000, .3)
 			transition: all .2s ease
+			+media-breakpoint-down(md)
+				padding: 10px 25px 0
+				margin: 0
+			+media-breakpoint-down(sm)
+				padding: 10px 15px 0
 			&:hover
 				color: rgba($lo-color-1, .6)
 .map
@@ -598,6 +661,14 @@ section:last-child
 			line-height: 2.4
 			font-size: 1em
 			margin-top: -10px
+			+media-breakpoint-down(lg)
+				&.fixul
+					margin-top: 0px
+			+media-breakpoint-down(md)
+				&.fixul
+					margin-top: -10px
+			+media-breakpoint-down(sm)
+				padding-bottom: 10px
 			a
 				color: inherit
 	.author
@@ -610,7 +681,7 @@ section:last-child
 input,
 textarea
 	color: rgba($text-color,0.7)
-/*==========  castom OWL-CAROUSEL  ==========*/
+/*==========  castom OWL-CAROUSEL ==========*/
 .owl-carousel 
 	button.owl-dot
 		display: inline-block
@@ -630,7 +701,39 @@ textarea
 		background: $text-color
 	button:focus
 		outline: 0 none
-/*==========  animation style  ==========*/
+/*==========  castom OWL-CAROUSEL ==========*/
+
+/*==========  castom menu button  ==========*/
+
+#nav-icon2 span
+	height: 2px
+	width: 40%
+	border-radius: none
+	background: $lo-color-1
+	&:nth-child(even)
+		left: 40%
+	&:nth-child(3),
+	&:nth-child(4)
+		top: 12px
+	&:nth-child(5),
+	&:nth-child(6)
+		top: 24px
+#nav-icon2.open
+	span:nth-child(1)
+		left: 6px
+		top: 8px
+	span:nth-child(2)
+		left: calc(50% - 6px)
+		top: 9px
+	span:nth-child(5)
+		left: 6px
+		top: 22px
+	span:nth-child(6)
+		left: calc(50% - 6px)
+		top: 21px
+	
+
+/*==========  castom menu butto  ==========*/
 
 
 /*==========  animation style  ==========*/
